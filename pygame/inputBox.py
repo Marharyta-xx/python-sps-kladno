@@ -65,3 +65,6 @@ while True:
     input_rect.w = max(100, text_surface.get_width() + 10)
     pygame.display.flip()
     clock.tick(60)
+
+    git config --global user.email "margarita02012009@gmail.com"
+  git config --global user.name "MM"
