@@ -40,15 +40,18 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if input_rect.collidepoint(event.pos):
                 active = True
+            else:
+                active = False
 
         # if the key is physically pressed down
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_BACKSPACE:
+            if active:
+                if event.key == pygame.K_BACKSPACE:
                 
                 # stores text except last letter
-                user_text = user_text[0:-1]
-            else:
-                user_text += event.unicode
+                    user_text = user_text[0:-1]
+                else:
+                    user_text += event.unicode
 
     display_screen.fill((0, 0, 0))
 
@@ -65,6 +68,3 @@ while True:
     input_rect.w = max(100, text_surface.get_width() + 10)
     pygame.display.flip()
     clock.tick(60)
-
-    git config --global user.email "margarita02012009@gmail.com"
-  git config --global user.name "MM"
