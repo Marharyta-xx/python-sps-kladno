@@ -1,0 +1,13 @@
+WIDTH = 500
+HEIGHT = 800
+FPS = 30
+
+PLAYER_WIDTH = 50
+PLAYER_HEIGHT = 50
+PLAYER_SPEED =5
+PLAYER_IMAGE_PATH = "img/spaceship.png"
+
+B_WIDTH = 70
+B_HEIGHT = 70
+B_SPEED = 10
+B_IMG = "img/asteroid.png"
