@@ -8,6 +8,6 @@ PLAYER_SPEED =5
 PLAYER_IMAGE_PATH = "img/spaceship.png"
 
 B_WIDTH = 70
-B_HEIGHT = 70
-B_SPEED = 10
+B_HEIGHT = 50
+B_SPEED = 5
 B_IMG = "img/asteroid.png"
