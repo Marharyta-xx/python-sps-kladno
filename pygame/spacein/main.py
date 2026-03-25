@@ -21,7 +21,7 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = event.pos
         if state == "MENU":
-           if play_rect.collidepoint(mouse_pos):
+            if play_rect.collidepoint(mouse_pos):
                state = "PLAYING"
             elif settings_rect.collidepoint(mouse_pos):
                 state ="SETTINGS"
