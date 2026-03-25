@@ -5,9 +5,9 @@ pygame.init()
 screen = pygame.display.set_mode((800,600))
 pygame.display.set_caption("Space Invaders")
 running = True
-
+menu_font = pygame.font.SysFont("Arial", 50)
 def vypis_menu():
-    screen.blit(title_text, title_rect)
+    #screen.blit(title_text, title_rect)
     screen.blit(play_text, play_rect)
     screen.blit(settings_text, settings_rect)
     screen.blit(quit_text, quit_rect)
@@ -15,6 +15,7 @@ def vypis_menu():
 state = "MENU"
 
 while running:
+    screen.fill((25, 25, 112))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
