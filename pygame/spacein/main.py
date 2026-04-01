@@ -2,17 +2,23 @@ import pygame
 from settings import *
 pygame.init()
 
-screen = pygame.display.set_mode((800,600))
+
+screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Space Invaders")
 running = True
-menu_font = pygame.font.SysFont("Arial", 50)
 def vypis_menu():
-    #screen.blit(title_text, title_rect)
+    screen.fill((0, 0, 127))
+    screen.blit(title_text, title_rect)
     screen.blit(play_text, play_rect)
     screen.blit(settings_text, settings_rect)
     screen.blit(quit_text, quit_rect)
-    
-state = "MENU"
+def vypis_settings():
+    screen.fill((0, 0, 127))
+    screen.blit(res800_text, res800_rect)
+    screen.blit(res1024_text, res1024_rect)
+    screen.blit(res1280_text, res1280_rect)
+    screen.blit(back_text, back_rect)
+state = "MENU"   # MENU, PLAYING, PAUSED, GAME_OVER
 
 while running:
     screen.fill((25, 25, 112))
