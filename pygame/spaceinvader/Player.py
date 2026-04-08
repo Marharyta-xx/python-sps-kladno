@@ -7,7 +7,7 @@ class Player(pygame.sprite.Sprite):
         self.width = self.image.get_width()
         self.height = self.image.get_height()
         self.image = pygame.transform.scale(self.image,(self.width*settings.PLAYER_SCALE,self.height*settings.PLAYER_SCALE))
-        self.rect = self.image.get_rect(bottom = settings.SCREEN_HEIGHT, centerx = settings.SCREEN_HEIGHT//2)
+        self.rect = self.image.get_rect(bottom = settings.SCREEN_HEIGHT, centerx = settings.SCREEN_WIDTH)
         self.speed = settings.PLAYER_SPEED
 
     def update(self):

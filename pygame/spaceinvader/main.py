@@ -1,5 +1,6 @@
 from turtle import st
 from Player import Player
+from Enemy import Enemy
 import pygame
 import settings 
 #from Player import Player
@@ -12,7 +13,7 @@ player_group = pygame.sprite.Group()
 player_group.add(Player())
 
 enemy_group = pygame.sprite.Group()
-enemy_group.add(Player())
+enemy_group.add(Enemy())
 
 def vypis_menu():
     screen.fill((0, 0, 127))
