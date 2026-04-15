@@ -1,4 +1,4 @@
-from turtle import st
+
 from Player import Player
 from Enemy import Enemy
 import pygame

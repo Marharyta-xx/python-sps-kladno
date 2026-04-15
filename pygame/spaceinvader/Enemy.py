@@ -14,7 +14,7 @@ class Enemy(pygame.sprite.Sprite):
         self.direction = "LEFT"  # "RIGHT" pro doprava, "LEFT" pro doleva
 
     def update(self):
-        if self.counter % 50 == 0:
+        if self.counter % 90 == 0:
             self.rect.y += settings.ENEMY_SPEED
             if self.direction == "RIGHT":
                 self.direction = "LEFT"

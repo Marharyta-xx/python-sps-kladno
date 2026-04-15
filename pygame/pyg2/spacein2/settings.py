@@ -1,0 +1,16 @@
+import pygame
+
+BG_COLOR = (0, 0, 0)
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+FPS = 60
+
+#Player
+PLAYER_WIDTH = 50   
+PLAYER_HEIGHT = 50
+PLAYER_SPEED = 5
+PLAYER_IMAGE_PATH = "obrazky/spaceship1.png"
+PLAYER_SCALE = 0.06
+
+ENEMY_SCALE = 1.2
+ENEMY_IMAGE_PATH = "obrazky/alien{}.png"
