@@ -11,9 +11,13 @@ class Enemy(pygame.sprite.Sprite):
         self.speed = settings.ENEMY_SPEED
         self.direction = 1
         self.counter = -100
-        
+
         
 
+    
+
+           
+    
     def update(self):
         if self.direction ==1:
             self.rect.move_ip(self.speed,0)
@@ -21,11 +25,21 @@ class Enemy(pygame.sprite.Sprite):
         else:
             self.rect.move_ip(-self.speed,0)
             self.counter -= 1
-        if self.counter % 100 == 0 and self.counter != 0:
+        if self.counter % 1000 == 0 and self.counter != 0:
             self.direction *= -1
             self.rect.move_ip(0,settings.ENEMY_DROP)
 
+        self._check_borders()
 
+    def _check_borders(self):
+        if self.rect.right > settings.SCREEN_WIDTH - 50:
+            self.counter = 100
+            self.direction = -1
+            self.rect.y += settings.ENEMY_DROP
+        elif self.rect.left < 50:
+            self.counter = -100
+            self.direction = 1
+            self.rect.y += settings.ENEMY_DROP
         
 
    
