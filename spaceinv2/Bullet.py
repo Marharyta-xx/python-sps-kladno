@@ -19,7 +19,7 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
 
         self.rect.y += self.speed
-        if self.rect.bottom <0 or self.rect.top > settings.SCREEN_HEIGHT:
+        if self.rect.bottom < 0 or self.rect.top > settings.SCREEN_HEIGHT:
             self.kill()
 
     

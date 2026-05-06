@@ -17,6 +17,6 @@ ENEMY_IMAGE_PATH = "obrazky/alien{}.png"
 ENEMY_SCALE = 0.76
 ENEMY_SPEED = 2
 ENEMY_DROP = 10
-ENEMY_BULLET_IMG_PATH = "obrazky/bullet.png"
-ENEMY_BULET_SPEED =4
+ENEMY_BULLET_IMG_PATH = "obrazky/alien_bullet.png"
+ENEMY_BULET_SPEED = 4
 

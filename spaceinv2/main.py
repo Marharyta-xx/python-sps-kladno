@@ -12,11 +12,14 @@ clock = pygame.time.Clock()
 player = Player()
 player_group = pygame.sprite.Group()
 player_group.add(player)
+timer = 0
 
-
+SPAWN_BULLET= pygame.USEREVENT+1
+pygame.time.set_timer(SPAWN_BULLET,2000)
 
 enemy = Enemy(0,50)
 enemy_group = pygame.sprite.Group()
+
 
 keys = pygame.key.get_pressed()
 def create_enemy():
@@ -46,6 +49,16 @@ while running:
                 bullet= Bullet(player.rect.right - 5, player.rect.top +40, "Player")
                 player_group.add(bullet)
                 player.cooldown = pygame.time.get_ticks()
+
+        if event.type == SPAWN_BULLET:
+            for enemy in enemy_group:
+                if enemy:
+                    bullet = Bullet(enemy.rect.centerx,enemy.rect.bottom)
+                    enemy_group.add(bullet)
+
+
+
+           
 
 
     screen.fill(settings.BG_COLOR)
