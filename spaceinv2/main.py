@@ -76,7 +76,10 @@ while running:
     screen.fill(settings.BG_COLOR)
     player_group.update()
     player_group.draw(screen)
-    
+    player_bullet_group.update()
+    player_bullet_group.draw(screen)
+    enemy_bullet_group.update()
+    enemy_bullet_group.draw(screen)
     enemy_group.update()
     enemy_group.draw(screen)
     pygame.display.flip()
