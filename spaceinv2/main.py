@@ -1,3 +1,5 @@
+import random
+
 import pygame
 import settings
 from Player import Player
@@ -11,9 +13,10 @@ clock = pygame.time.Clock()
 
 player = Player()
 player_group = pygame.sprite.Group()
+player_bullet_group = pygame.sprite.Group()
+enemy_bullet_group = pygame.sprite.Group()
 player_group.add(player)
 timer = 0
-
 SPAWN_BULLET= pygame.USEREVENT+1
 pygame.time.set_timer(SPAWN_BULLET,2000)
 
@@ -45,17 +48,26 @@ while running:
         if event.type == pygame.KEYDOWN:
             if pygame.K_SPACE and player.cooldown == 0:
                 bullet= Bullet(player.rect.left + 5, player.rect.top +40, "Player")
-                player_group.add(bullet)
+                player_bullet_group.add(bullet)
                 bullet= Bullet(player.rect.right - 5, player.rect.top +40, "Player")
-                player_group.add(bullet)
+                player_bullet_group.add(bullet)
                 player.cooldown = pygame.time.get_ticks()
 
         if event.type == SPAWN_BULLET:
             for enemy in enemy_group:
-                if enemy:
+                if random.randint(1, 100) <= 20:
                     bullet = Bullet(enemy.rect.centerx,enemy.rect.bottom)
-                    enemy_group.add(bullet)
+                    enemy_bullet_group.add(bullet)
 
+           
+    if pygame.sprite.groupcollide(player_group, enemy_group, True, True,pygame.sprite.collide_mask):
+        print("sražka")
+        running = False
+    if pygame.sprite.groupcollide(player_group, enemy_bullet_group, True, True,pygame.sprite.collide_mask):
+        print("sražka S PLAYEREM")
+        running = False
+    if pygame.sprite.groupcollide(enemy_group, player_bullet_group, True, True,pygame.sprite.collide_mask):
+        print("sražka S ENEMY")
 
 
            
